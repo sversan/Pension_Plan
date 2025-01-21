@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pension Contribution Overview</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 12px;
+            text-align: center;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .summary {
+            margin-top: 30px;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Pension Contribution Overview</h1>
+
+    <h2>Contribution Breakdown Over Time</h2>
+
+    <table>
+        <tr>
+            <th>Year</th>
+            <th>Salary</th>
+            <th>Pension Contribution</th>
+            <th>Living Cost</th>
+            <th>Savings/Investment</th>
+        </tr>
+        {% for i in range(years|length) %}
+        <tr>
+            <td>{{ years[i] }}</td>
+            <td>${{ salary[i]|round(2) }}</td>
+            <td>${{ pension_contrib[i]|round(2) }}</td>
+            <td>${{ living_cost[i]|round(2) }}</td>
+            <td>${{ saving_investment[i]|round(2) }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <div class="summary">
+        <h2>Summary</h2>
+        <p><strong>Total Pension Contributions (1999-2025):</strong> ${{ total_pension|round(2) }}</p>
+        <p><strong>Total Living Costs (1999-2025):</strong> ${{ total_living|round(2) }}</p>
+        <p><strong>Total Savings
+
+
+    </body>
+    </html>
